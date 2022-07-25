@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<style>
+
+h2 {
+	border: 2px solid Tomato;
+	background-color: LightGray;
+	color: black;
+	border-radius: 5px;
+	font-size: 40px;
+	margin-right: 150px;
+	margin-left: 80px;
+}
+
+h3 {
+	border: 2px solid MediumSeaGreen;
+	background-color: LightGray;
+	color: Red;
+	border-radius: 5px;
+	margin-left: 80px;
+	margin-right: 150px;
+}
+
+table {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #CF9FFF;
+	color: white;
+	margin-left: 80px;
+	margin-top: 50px;
+	
+}
+</style>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div>
+		<h2>Spring Boot - User Registation</h2>
+		<tr>
+			<div align="left">
+				<h3>
+					<a th:href="@{'/new'}">Add new User</a>
+				</h3>
+				<h3>
+					<a th:href="@{'/acc/new'}">Add new Account</a>
+				</h3>
+			</div>
+
+		</tr>
+		<tr>
+
+			<div class="col-sm-5" align="center">
+				<div class="panel-body" align="center">
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								<th>User ID</th>
+								<th>Name</th>
+								<th>Email Id</th>
+								<th>Mobile Number</th>
+								<th>Secondary Mobile Number</th>
+								<th>Date of Birth</th>
+								<th>Gender</th>
+								<th>Edit</th>
+								<th>Delete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="user : ${listuser }">
+								<td th:text="${user.userid}">User ID</td>
+								<td th:text="${user.name}">Name</td>
+								<td th:text="${user.emailid}">Email Id</td>
+								<td th:text="${user.mobile}">Mobile Number</td>
+								<td th:text="${user.smobile}">Secondary Mobile Number</td>
+								<td th:text="${user.dob}">Date of Birth</td>
+								<td th:text="${user.gender}">Gender</td>
+								<td><a th:href="@{'/edit/' + ${user.userid}}">Edit</a></td>
+								<td><a th:href="@{'/delete/' + ${user.userid}}">Delete</a>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</div>
+
+			</div>
+
+		</tr>
+
+		</tbody>
+		</table>
+		<div>
+</body>
+</html>
