@@ -1,0 +1,35 @@
+Account Table
+
+CREATE TABLE `account` (
+  `accid` int(10) NOT NULL,
+  `userid` int(5) DEFAULT NULL,
+  `bname` char(40) DEFAULT NULL,
+  `atype` char(1) DEFAULT NULL,
+  `abalance` decimal(10,2) DEFAULT NULL
+)
+
+
+User Table
+
+CREATE TABLE `user` (
+  `userid` int(5) NOT NULL,//Auto_Increment
+  `name` char(40) DEFAULT NULL,
+  `emailid` char(100) DEFAULT NULL,
+  `mobile` char(10) DEFAULT NULL,
+  `smobile` char(10) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL
+)
+
+CREATE TABLE `user`(userid integer(5) primary key ,
+ name char(40), emailid char(100), mobile char(10), smobile char(10), 
+dob date, gender char(1)
+)
+
+Feign Client maven Dependency
+<!-- OpenFeign Client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
